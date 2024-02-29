@@ -170,8 +170,8 @@ namespace TowerGame_V1._0._2
         }
         public void getSheetUpdate()
         {
-            int pCurrentHealth = HealthBar.Value;
-            int pCurrentMagic = MagicBar.Value;
+            int pCurrentHealth = (int)HealthBar.Value;
+            int pCurrentMagic = (int)MagicBar.Value;
             int pHealthStep = pCurrentHealth - currentAdjustedHP;
             int pMagicStep = pCurrentMagic - currentAdjustedMP;
 
@@ -190,7 +190,7 @@ namespace TowerGame_V1._0._2
                 totalSP = totalSP - 1;
                 totalAdjustedSTR = totalAdjustedSTR + 1;
 
-                int currentSTR = int.Parse(strengthLabel.Content);
+                int currentSTR = Convert.ToInt32(strengthLabel.Content);
 
                 //int pMagic = 100 + ((pStamina + pIntellect) * 10);
                 int addedSTR = currentSTR + 1;
