@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerGame-V1.0.2", "TowerGame-V1.0.2.csproj", "{D8C37535-2907-4E3A-9D92-61DD64D4E25D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8C37535-2907-4E3A-9D92-61DD64D4E25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8C37535-2907-4E3A-9D92-61DD64D4E25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8C37535-2907-4E3A-9D92-61DD64D4E25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8C37535-2907-4E3A-9D92-61DD64D4E25D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66D6E27B-1B63-4CA5-8BE0-70C0989073DD}
+	EndGlobalSection
+EndGlobal
