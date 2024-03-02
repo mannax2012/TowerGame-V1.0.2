@@ -123,12 +123,12 @@
             </Grid>
             <Grid Grid.Column="2" Grid.Row="3">
                 <StackPanel>
-                    <Label x:Name="levelLabel" Content="0" FontFamily="Ms Sans Serif" FontSize="14"/>
+                    <Label x:Name="levelLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="4">
                 <StackPanel>
-                    <Label x:Name="ExPLabel" Content="0" FontFamily="Ms Sans Serif" FontSize="14"/>
+                    <Label x:Name="ExPLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="5">
@@ -138,37 +138,37 @@
             </Grid>
             <Grid Grid.Column="2" Grid.Row="6">
                 <StackPanel>
-                    <Label x:Name="strengthLabel" Content="0" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                    <Label x:Name="strengthLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="7">
                 <StackPanel>
-                    <Label x:Name="dexterityLabel" Content="0" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                    <Label x:Name="dexterityLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="8">
                 <StackPanel>
-                    <Label x:Name="staminaLabel" Content="0" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                    <Label x:Name="staminaLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="9">
                 <StackPanel>
-                    <Label x:Name="intellectLabel" Content="0" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                    <Label x:Name="intellectLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="10">
                 <StackPanel>
-                    <Label x:Name="focusLabel" Content="0" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                    <Label x:Name="focusLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="11">
                 <StackPanel>
-                    <Label x:Name="wisdomLabel" Content="0" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                    <Label x:Name="wisdomLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Height="24">
                 <StackPanel VerticalAlignment="Top">
-                    <Label x:Name="maxExPValueLabel" Content="0" FontFamily="Ms Sans Serif" FontSize="14" Width="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <Label x:Name="maxExPValueLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="5">
@@ -250,7 +250,7 @@
             </Grid>
             <Grid Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="4">
                 <StackPanel>
-                    <Label x:Name="characterTotalSP" Content="0" FontFamily="Ms Sans Serif" FontSize="14" Width="30" HorizontalAlignment="Left"/>
+                    <Label x:Name="characterTotalSP" Content="{Binding Player.skillPoints}" FontFamily="Ms Sans Serif" FontSize="14" Width="30" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="6" Grid.Column="3" Grid.RowSpan="6">
@@ -268,7 +268,7 @@
             FontSize="8"
             Foreground="White" 
             BorderBrush="White"
-            Background="Black" Click="addStrengthButton_Click"/>
+            Background="Black" Command="{Binding addStrengthCommand}"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="7" Grid.Column="3" Grid.RowSpan="6">
@@ -385,7 +385,7 @@
                     Width="140"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"
                     ToolTip="Create Character"
-                    Click="createCharButton_Click"
+                    
                     Content="Create Character"
                     FontFamily="Ms Sans Serif"
                     Foreground="White" 
