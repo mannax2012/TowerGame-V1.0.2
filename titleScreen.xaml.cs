@@ -12,6 +12,7 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 using Newtonsoft.Json;
+using TowerGame_V1._0._2.classes;
 
 namespace TowerGame_V1._0._2
 {
@@ -25,7 +26,8 @@ namespace TowerGame_V1._0._2
         {
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
-
+            classManager classes = new classManager();
+            classes.InitializeClassDatabase();
         }
 
         private void exitGameButton_Click(object sender, RoutedEventArgs e)

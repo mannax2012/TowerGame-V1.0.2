@@ -14,6 +14,12 @@ namespace TowerGame_V1._0._2.characterManager
     {
         private PlayerData player;
         private int totalAdjustedSTR;
+        private int totalAdjustedDEX;
+        private int totalAdjustedSTAM;
+        private int totalAdjustedINTEL;
+        private int totalAdjustedFOCUS;
+        private int totalAdjustedWISDOM;
+        
         public PlayerData Player
         {
             get => player;
@@ -26,15 +32,25 @@ namespace TowerGame_V1._0._2.characterManager
 
         public ICommand LevelUpCommand { get; }
         public ICommand addStrengthCommand { get; }
+        public ICommand addDexterityCommand { get; }
+        public ICommand addStaminaCommand { get; }
+        public ICommand addIntellectCommand { get; }
+        public ICommand addFocusCommand { get; }
+        public ICommand addWisdomCommand { get; }
 
         public CharacterDataManager()
         {
             Player = new PlayerData("", "Choose a Class", 1, 100, 100, 100, 100, 10, 10, 10, 10, 10, 10, 0, 1000, 5, 15); // Initialize with default values
             LevelUpCommand = new RelayCommand(LevelUp);
-            addStrengthCommand = new RelayCommand(LevelUpSTR);
+            addStrengthCommand = new RelayCommand(addStrength);
+            addDexterityCommand = new RelayCommand(addDexterity);
+            addStaminaCommand = new RelayCommand(addStamina);
+            addIntellectCommand = new RelayCommand(addIntellect);
+            addFocusCommand = new RelayCommand(addFocus);
+            addWisdomCommand = new RelayCommand(addWisdom);
         }
 
-        private void LevelUpSTR() {
+        private void addStrength() {
 
             if (Player.skillPoints > 0)
             {
@@ -50,7 +66,91 @@ namespace TowerGame_V1._0._2.characterManager
                 MessageBox.Show($"Not enough skill points: {Player.skillPoints}");
             }
         }
+        private void addDexterity()
+        {
 
+            if (Player.skillPoints > 0)
+            {
+                Player.skillPoints = Player.skillPoints - 1;
+                totalAdjustedDEX = totalAdjustedDEX + 1;
+
+                int currentDEX = Player.Dexterity;
+                int addedDEX = currentDEX + 1;
+                Player.Dexterity = addedDEX;
+            }
+            else
+            {
+                MessageBox.Show($"Not enough skill points: {Player.skillPoints}");
+            }
+        }
+        private void addStamina()
+        {
+
+            if (Player.skillPoints > 0)
+            {
+                Player.skillPoints = Player.skillPoints - 1;
+                totalAdjustedSTAM = totalAdjustedSTAM + 1;
+
+                int currentSTAM = Player.Stamina;
+                int addedSTAM = currentSTAM + 1;
+                Player.Stamina = addedSTAM;
+            }
+            else
+            {
+                MessageBox.Show($"Not enough skill points: {Player.skillPoints}");
+            }
+        }
+        private void addIntellect()
+        {
+
+            if (Player.skillPoints > 0)
+            {
+                Player.skillPoints = Player.skillPoints - 1;
+                totalAdjustedINTEL = totalAdjustedINTEL + 1;
+
+                int currentINTEL = Player.Intellect;
+                int addedINTEL = currentINTEL + 1;
+                Player.Intellect = addedINTEL;
+            }
+            else
+            {
+                MessageBox.Show($"Not enough skill points: {Player.skillPoints}");
+            }
+        }
+        private void addFocus()
+        {
+
+            if (Player.skillPoints > 0)
+            {
+                Player.skillPoints = Player.skillPoints - 1;
+                totalAdjustedFOCUS = totalAdjustedFOCUS + 1;
+
+                int currentFOCUS = Player.Focus;
+                int addedFOCUS = currentFOCUS + 1;
+                Player.Focus = addedFOCUS;
+            }
+            else
+            {
+                MessageBox.Show($"Not enough skill points: {Player.skillPoints}");
+            }
+        }
+        private void addWisdom()
+        {
+
+            if (Player.skillPoints > 0)
+            {
+                Player.skillPoints = Player.skillPoints - 1;
+                totalAdjustedWISDOM = totalAdjustedWISDOM + 1;
+
+                int currentWISDOM = Player.Wisdom;
+                int addedWISDOM = currentWISDOM + 1;
+                Player.Wisdom = addedWISDOM;
+            }
+            else
+            {
+                MessageBox.Show($"Not enough skill points: {Player.skillPoints}");
+            }
+        }
         private void LevelUp()
         {
             Player.Health += 2;

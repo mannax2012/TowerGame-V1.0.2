@@ -201,7 +201,7 @@ namespace characterData
         {
             Name = name;
             Class = pclass;
-        Level = level;
+            Level = level;
             Health = health;
             HealthMax = healthMax;
             Magic = magic;

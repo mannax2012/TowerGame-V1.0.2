@@ -168,7 +168,7 @@
             </Grid>
             <Grid Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Height="24">
                 <StackPanel VerticalAlignment="Top">
-                    <Label x:Name="maxExPValueLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <Label x:Name="maxExPValueLabel" Content="{Binding Player.ExPMax}" FontFamily="Ms Sans Serif" FontSize="14" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="5">
@@ -197,7 +197,7 @@
             </Grid>
             <Grid Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="4">
                 <StackPanel>
-                    <ProgressBar x:Name="MagicBar" Width="150" Height="15"  HorizontalAlignment="Left" Foreground="DarkBlue" Background="Blue" BorderBrush="DarkBlue" Value="50">
+                    <ProgressBar x:Name="MagicBar" Width="150" Height="15"  HorizontalAlignment="Left" Foreground="DarkBlue" Background="Blue" BorderBrush="DarkBlue" Value="{Binding Player.Magic}" Maximum="{Binding Player.MagicMax}">
                         <ProgressBar.Template>
                             <ControlTemplate TargetType="ProgressBar">
                                 <Grid>
@@ -221,7 +221,7 @@
             </Grid>
             <Grid Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="4">
                 <StackPanel>
-                    <ProgressBar x:Name="ExPBar" Width="150" Height="15"  HorizontalAlignment="Left" Foreground="MediumPurple" Background="Purple" BorderBrush="Black" Value="50">
+                <ProgressBar x:Name="ExPBar" Width="150" Height="15"  HorizontalAlignment="Left" Foreground="MediumPurple" Background="Purple" BorderBrush="Black" Value="{Binding Player.ExP}" Maximum="{Binding Player.ExPMax}">
                         <ProgressBar.Template>
                             <ControlTemplate TargetType="ProgressBar">
                                 <Grid>
@@ -287,7 +287,7 @@
                             FontSize="8"
                             Foreground="White" 
                             BorderBrush="White"
-                            Background="Black"/>
+                            Background="Black" Command="{Binding addDexterityCommand}"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="8" Grid.Column="3" Grid.RowSpan="6">
@@ -299,14 +299,14 @@
                         FontWeight="Normal"
                             VerticalAlignment="Center"
                             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"
-                            ToolTip="Add Dexterity"
+                            ToolTip="Add Stamina"
                             Content="Add"
                             HorizontalAlignment="Left"
                             FontFamily="Ms Sans Serif"
                             FontSize="8"
                             Foreground="White" 
                             BorderBrush="White"
-                            Background="Black"/>
+                            Background="Black" Command="{Binding addStaminaCommand}"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="9" Grid.Column="3" Grid.RowSpan="5">
@@ -318,14 +318,14 @@
                             FontWeight="Normal"
                             VerticalAlignment="Center"
                             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"
-                            ToolTip="Add Dexterity"
+                            ToolTip="Add Intellect"
                             Content="Add"
                             HorizontalAlignment="Left"
                             FontFamily="Ms Sans Serif"
                             FontSize="8"
                             Foreground="White" 
                             BorderBrush="White"
-                            Background="Black"/>
+                            Background="Black" Command="{Binding addIntellectCommand}"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="10" Grid.Column="3" Grid.RowSpan="4">
@@ -337,14 +337,14 @@
                         FontWeight="Normal"
                             VerticalAlignment="Center"
                             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"
-                            ToolTip="Add Dexterity"
+                            ToolTip="Add Focus"
                             Content="Add"
                             HorizontalAlignment="Left"
                             FontFamily="Ms Sans Serif"
                             FontSize="8"
                             Foreground="White" 
                             BorderBrush="White"
-                            Background="Black"/>
+                            Background="Black" Command="{Binding addFocusCommand}"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="11" Grid.Column="3" Grid.RowSpan="3">
@@ -356,14 +356,14 @@
                         FontWeight="Normal"
                             VerticalAlignment="Center"
                             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"
-                            ToolTip="Add Dexterity"
+                            ToolTip="Add Wisdom"
                             Content="Add"
                             HorizontalAlignment="Left"
                             FontFamily="Ms Sans Serif"
                             FontSize="8"
                             Foreground="White" 
                             BorderBrush="White"
-                            Background="Black"/>
+                            Background="Black" Command="{Binding addWisdomCommand}"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="5" Grid.RowSpan="11" Grid.Row="1">

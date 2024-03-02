@@ -1,6 +1,8 @@
 ﻿using characterData;
 using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -14,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TowerGame_V1._0._2.characterManager;
+using TowerGame_V1._0._2.classes;
 
 namespace TowerGame_V1._0._2
 {
@@ -23,22 +26,19 @@ namespace TowerGame_V1._0._2
     public partial class characterCreation : Window
     {
         PlayerData playerData;
+        DataTable dtClasses;
+        public string connectionString = @"Data Source=Classes.db;Version=3;";
         public characterCreation()
         {
             InitializeComponent();
             DataContext = new CharacterDataManager();
             addClassList();
+            NameTextBox.Focus();
         }
         public void addClassList()
         {
-            NameTextBox.Focus();
             classListBox.Items.Clear();
-            classListBox.Items.Add("Warrior");
-            classListBox.Items.Add("Paladin");
-            classListBox.Items.Add("Mage");
-            classListBox.Items.Add("Priest");
-            classListBox.Items.Add("Ranger");
-            classListBox.Items.Add("Archer");
+            LoadClassesIntoComboBox();
         }
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -47,6 +47,7 @@ namespace TowerGame_V1._0._2
                 DragMove();
             }
         }
+
         private void createCancelButton_Click(object sender, RoutedEventArgs e)
         {
             double prevWindowLeft = this.Left;
@@ -69,20 +70,37 @@ namespace TowerGame_V1._0._2
             titleScreen.Show();
             this.Close();
         }
+        private void LoadClassesIntoComboBox()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string selectQuery = "SELECT Name FROM Classes";
+                SQLiteCommand selectCommand = new SQLiteCommand(selectQuery, connection);
+                SQLiteDataReader reader = selectCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    classListBox.Items.Add(reader["Name"].ToString());
+                }
+            }
+        }
         public void classListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (classListBox.SelectedItem != null)
             {
                 // Update the label with the selected item's content
                 classLabel.Content = classListBox.SelectedItem.ToString();
+    
             }
             else
             {
-                // Clear the label if no item is selected
-                classLabel.Content = "string_null";
+                    // Clear the label if no item is selected
+                    classLabel.Content = "string_null";
             }
+            
+
         }
- 
+
     }
-   
 }
+
