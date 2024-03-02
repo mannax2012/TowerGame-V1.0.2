@@ -123,12 +123,12 @@
             </Grid>
             <Grid Grid.Column="2" Grid.Row="3">
                 <StackPanel>
-                    <Label x:Name="levelLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14"/>
+                    <Label x:Name="levelLabel" Content="{Binding Player.Level}" FontFamily="Ms Sans Serif" FontSize="14"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="4">
                 <StackPanel>
-                    <Label x:Name="ExPLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14"/>
+                    <Label x:Name="ExPLabel" Content="{Binding Player.ExP}" FontFamily="Ms Sans Serif" FontSize="14"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="5">
@@ -143,27 +143,27 @@
             </Grid>
             <Grid Grid.Column="2" Grid.Row="7">
                 <StackPanel>
-                    <Label x:Name="dexterityLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                    <Label x:Name="dexterityLabel" Content="{Binding Player.Dexterity}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="8">
                 <StackPanel>
-                    <Label x:Name="staminaLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                    <Label x:Name="staminaLabel" Content="{Binding Player.Stamina}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="9">
                 <StackPanel>
-                    <Label x:Name="intellectLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                    <Label x:Name="intellectLabel" Content="{Binding Player.Intellect}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="10">
                 <StackPanel>
-                    <Label x:Name="focusLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                    <Label x:Name="focusLabel" Content="{Binding Player.Focus}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="11">
                 <StackPanel>
-                    <Label x:Name="wisdomLabel" Content="{Binding Player.Strength}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                    <Label x:Name="wisdomLabel" Content="{Binding Player.Wisdom}" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Height="24">
@@ -173,7 +173,7 @@
             </Grid>
             <Grid Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="5">
                 <StackPanel>
-                    <ProgressBar x:Name="HealthBar" Width="150" Height="15"  HorizontalAlignment="Left" Foreground="DarkGreen" Background="Green" BorderBrush="DarkGreen" Value="50" Maximum="100">
+                    <ProgressBar x:Name="HealthBar" Width="150" Height="15"  HorizontalAlignment="Left" Foreground="DarkGreen" Background="Green" BorderBrush="DarkGreen" Value="{Binding Player.Health}" Maximum="{Binding Player.HealthMax}">
                         <ProgressBar.Template>
                             <ControlTemplate TargetType="ProgressBar">
                                 <Grid>

@@ -29,7 +29,7 @@ namespace TowerGame_V1._0._2.characterManager
 
         public CharacterDataManager()
         {
-            Player = new PlayerData(10, 10, 10, 10, 10, 15); // Initialize with default values
+            Player = new PlayerData("", "Choose a Class", 1, 100, 100, 100, 100, 10, 10, 10, 10, 10, 10, 0, 1000, 5, 15); // Initialize with default values
             LevelUpCommand = new RelayCommand(LevelUp);
             addStrengthCommand = new RelayCommand(LevelUpSTR);
         }
@@ -55,7 +55,7 @@ namespace TowerGame_V1._0._2.characterManager
         {
             Player.Health += 2;
             Player.Strength += 2;
-            Player.Intelligence += 2;
+            Player.Intellect += 2;
             Player.Dexterity += 2;
             Player.Stamina += 2;
         }

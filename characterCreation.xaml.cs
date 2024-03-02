@@ -1,4 +1,5 @@
-﻿using System;
+﻿using characterData;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace TowerGame_V1._0._2
     /// </summary>
     public partial class characterCreation : Window
     {
+        PlayerData playerData;
         public characterCreation()
         {
             InitializeComponent();
@@ -73,7 +75,6 @@ namespace TowerGame_V1._0._2
             {
                 // Update the label with the selected item's content
                 classLabel.Content = classListBox.SelectedItem.ToString();
-
             }
             else
             {
