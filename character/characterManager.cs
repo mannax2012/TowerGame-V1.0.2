@@ -160,7 +160,7 @@ namespace TowerGame_V1._0._2.characterManager
             Player.Stamina += 2;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
@@ -178,7 +178,7 @@ namespace TowerGame_V1._0._2.characterManager
             this.execute = execute;
         }
 
-        public event EventHandler CanExecuteChanged
+        public event EventHandler? CanExecuteChanged
         {
             add { }
             remove { }

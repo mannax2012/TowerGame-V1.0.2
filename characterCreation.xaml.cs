@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TowerGame_V1._0._2.characterManager;
 using TowerGame_V1._0._2.classes;
+using System.Numerics;
+using classDataManagment;
 
 namespace TowerGame_V1._0._2
 {
@@ -25,26 +27,42 @@ namespace TowerGame_V1._0._2
     /// </summary>
     public partial class characterCreation : Window
     {
-        PlayerData playerData;
-        DataTable dtClasses;
-        public string connectionString = @"Data Source=Classes.db;Version=3;";
+
+        List<classData> playerClasses = new List<classData>();
+        classManager classList = new classManager();
+
         public characterCreation()
         {
             InitializeComponent();
             DataContext = new CharacterDataManager();
-            addClassList();
-            NameTextBox.Focus();
-        }
-        public void addClassList()
-        {
             classListBox.Items.Clear();
-            LoadClassesIntoComboBox();
+            InitializeClassDatabase();
         }
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
             {
                 DragMove();
+            }
+        }
+        public void InitializeClassDatabase()
+        {
+            playerClasses = new List<classData>
+            {
+                new classData("Warrior", 7, 3, 5, 0, 0, 0),
+                new classData("Mage", 0, 0, 1, 7, 3, 4),
+            };
+
+            if (playerClasses != null && playerClasses.Count > 0)
+            {
+                foreach (var player in playerClasses)
+                {
+                    classListBox.Items.Add(player.ClassName);
+                }
+            }
+            else
+            {
+                classListBox.Items.Add("Failure");
             }
         }
 
@@ -70,35 +88,20 @@ namespace TowerGame_V1._0._2
             titleScreen.Show();
             this.Close();
         }
-        private void LoadClassesIntoComboBox()
-        {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-            {
-                connection.Open();
-                string selectQuery = "SELECT Name FROM Classes";
-                SQLiteCommand selectCommand = new SQLiteCommand(selectQuery, connection);
-                SQLiteDataReader reader = selectCommand.ExecuteReader();
-                while (reader.Read())
-                {
-                    classListBox.Items.Add(reader["Name"].ToString());
-                }
-            }
-        }
+       
         public void classListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (classListBox.SelectedItem != null)
-            {
-                // Update the label with the selected item's content
-                classLabel.Content = classListBox.SelectedItem.ToString();
-    
-            }
-            else
-            {
-                    // Clear the label if no item is selected
+                {
+                    classLabel.Content = classListBox.SelectedItem.ToString();
+                    string? playerClass = classLabel.Content.ToString();
+                    classList.getClassBonus(playerClass);
+                    
+                }
+                else
+                {
                     classLabel.Content = "string_null";
-            }
-            
-
+                }
         }
 
     }

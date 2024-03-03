@@ -26,8 +26,8 @@ namespace TowerGame_V1._0._2
         {
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
-            classManager classes = new classManager();
-            classes.InitializeClassDatabase();
+            //classManager classes = new classManager();
+            //classes.InitializeClassDatabase();
         }
 
         private void exitGameButton_Click(object sender, RoutedEventArgs e)

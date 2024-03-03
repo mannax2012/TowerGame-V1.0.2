@@ -133,7 +133,7 @@
             </Grid>
             <Grid Grid.Column="2" Grid.Row="5">
                 <StackPanel>
-                    <Label x:Name="classLabel" FontFamily="Ms Sans Serif" FontSize="14" Height="25"/>
+                    <Label x:Name="classLabel" Content="{Binding Player.Class}" FontFamily="Ms Sans Serif" FontSize="14" Height="25"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Grid.Row="6">
